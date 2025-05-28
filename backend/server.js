@@ -14,7 +14,7 @@ app.use(cors({
 }));
 
 app.use(express.json()); // parse incoming JSON
-app.use('/api', aiRouter); // mount your routes
+app.use('/api/ai', aiRouter); // ✅ this gives you /api/ai/tutor
 app.use('/api', langDetectRouter); // 🟢 Add this line
 
 app.listen(PORT, () => {
