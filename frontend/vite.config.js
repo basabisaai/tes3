@@ -3,6 +3,7 @@ const { defineConfig } = require('vite');
 const react = require('@vitejs/plugin-react');
 
 module.exports = defineConfig({
+  base: './', // 🟢 ADD THIS LINE — THE KEY TO VITE IN VERCEL
   plugins: [react()],
   css: {
     postcss: {
@@ -17,7 +18,7 @@ module.exports = defineConfig({
     strictPort: true,
     allowedHosts: ['.ngrok-free.app'],
     cors: {
-      origin: '*',  // Agar semua origin bisa akses
+      origin: '*',
       methods: ['GET', 'POST'],
       allowedHeaders: ['Content-Type']
     }
