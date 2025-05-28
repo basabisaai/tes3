@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors'); // 🟢 Add this line
+const langDetectRouter = require('./routes/langdetect'); // 🟢 Add this line
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,6 +15,7 @@ app.use(cors({
 
 app.use(express.json()); // parse incoming JSON
 app.use('/api', aiRouter); // mount your routes
+app.use('/api', langDetectRouter); // 🟢 Add this line
 
 app.listen(PORT, () => {
   console.log(`✅ Server running on http://localhost:${PORT}`);
